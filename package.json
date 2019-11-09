@@ -1,0 +1,22 @@
+{
+  "name": "@alicilin/openalpr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "install": "node install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alicilin/node-openalpr.git"
+  },
+  "keywords": [],
+  "author": "Ali Fırat Güler",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^16.1.7",
+    "adm-zip": "^0.4.13"
+  }
+}
