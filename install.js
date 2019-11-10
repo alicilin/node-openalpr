@@ -16,7 +16,7 @@ function bytesToSize(bytes) {
 }
 
 async function install(){
-    let res = await fetch('https://github.com/alicilin/node-openalpr/raw/master/bin.zip');
+    let res = await fetch('https://github.com/alicilin/node-openalpr/releases/download/1.0.0/bin.zip');
     let rs = fs.createWriteStream(path.join( __dirname, 'bin.zip'));
     let total = 0;
     res.body.on('data', data => {
