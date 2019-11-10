@@ -6,7 +6,7 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const fetch = require('node-fetch');
 const fs = require('fs');
-const supos = { freebsd: 'linux', linux: 'linux', openbsd: 'linux', win32: 'windows' };
+const supos = { linux: 'linux', win32: 'windows' };
 //--------------------------------------------------------------
 function bytesToSize(bytes) {
     var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];

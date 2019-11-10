@@ -4,7 +4,7 @@ const exec = util.promisify(require('child_process').exec);
 const path = require('path');
 const os = require('os');
 const joi = require('@hapi/joi');
-const supos = { freebsd: 'linux', linux: 'linux', openbsd: 'linux', win32: 'windows' };
+const supos = { linux: 'linux',  win32: 'windows' };
 const osname = supos[os.platform()];
 
 let scheme = joi.object({
