@@ -31,7 +31,7 @@ async function install(){
 
     new AdmZip(path.join(__dirname, 'bin.zip')).extractAllTo(__dirname, true);
     if (supos[os.platform()] === 'linux') {
-       let { stderr } = await exec('chmod 777 -R ./');
+       let { stderr } = await exec('chmod 777 -R ./', { cwd: __dirname });
        if(stderr) throw new Error(stderr);
     }
 
