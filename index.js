@@ -62,6 +62,7 @@ executor.windows = function (image, { c, p, a }) {
 async function process(image, { c, p, a}){
     if (!(os.platform() in supos)) throw new Error('unsupported os');
     if (os.arch() !== 'x64') throw new Error('unsupported arch');
+    if (image.slice(0, 1) === '.') image = path.resolve(module.parent.path, image);
     try { 
         let valid = await scheme.validateAsync({ image, c, p, a });
         let { stdout, stderr } = await executor[osname](valid.image, { c: valid.c, p: valid.p, a: valid.a }); 
