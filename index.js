@@ -34,7 +34,7 @@ executor.linux = function (image, { c, p, a }) {
     if(p) args.push('-p', p);
     if(Array.isArray(a)) args.push(...a);
 
-    args.push(image);
+    args.push(`"${image}"`);
     
     return exec(args.join(' '), options);
 }
@@ -54,7 +54,7 @@ executor.windows = function (image, { c, p, a }) {
     if (p) args.push('-p', p);
     if (Array.isArray(a)) args.push(...a);
 
-    args.push(image);
+    args.push(`"${image}"`);
 
     return exec(args.join(' '), options);
 }
