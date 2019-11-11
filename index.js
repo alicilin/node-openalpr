@@ -25,10 +25,12 @@ executor.linux = function (image, { c, p, a }) {
     }
 
     let args = []
-    
-    args.push(path.join(__dirname, 'bin', osname, 'bin', 'alpr'));
+    let cpath = path.join(__dirname, 'bin', osname, 'share', 'openalpr', 'config', 'openalpr.defaults.conf');
+    let bpath = path.join(__dirname, 'bin', osname, 'bin', 'alpr');
+
+    args.push(`"${bpath}"`);
     args.push('-c', c || 'eu');
-    args.push('--config', path.join(__dirname, 'bin', osname, 'share', 'openalpr', 'config', 'openalpr.defaults.conf'));
+    args.push('--config', `"${cpath}"`);
     args.push('-j');
 
     if(p) args.push('-p', p);
@@ -45,10 +47,12 @@ executor.windows = function (image, { c, p, a }) {
     }
 
     let args = []
+    let cpath = path.join(__dirname, 'bin', osname, 'openalpr.conf');
+    let bpath = path.join(__dirname, 'bin', osname, 'alpr.exe');
 
-    args.push(path.join(__dirname, 'bin', osname, 'alpr.exe'));
+    args.push(`"${bpath}"`);
     args.push('-c', c || 'eu');
-    args.push('--config', path.join(__dirname, 'bin', osname, 'openalpr.conf'));
+    args.push('--config', `"${cpath}"`);
     args.push('-j');
 
     if (p) args.push('-p', p);
